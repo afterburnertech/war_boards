@@ -24,5 +24,13 @@ module WarBoards
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+
+    
+    config.to_prepare do
+        extenders_path = Rails.application.root + "app/extenders/**/*.rb" 
+        Dir.glob(extenders_path) do |file|
+            Rails.configuration.cache_classes ? require(file) : load(file) 
+        end
+    end
   end
 end
