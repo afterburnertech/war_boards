@@ -11,4 +11,6 @@ WarBoards::Application.routes.draw do
   end
 
   mount WarEngine::Engine, :at => "/"
+  
+
 end

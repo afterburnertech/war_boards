@@ -1,7 +1,7 @@
 require 'spec_helper' 
 feature 'Accounts' do
 	scenario "creating an account" do
-		visit '/'
+		visit "/"
 		click_link 'Account Sign Up'
 		fill_in 'Name', :with => "Test"
 		fill_in 'Subdomain', :with => "test"
